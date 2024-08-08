@@ -2,7 +2,6 @@ module AssociatedTests
 
 using Test
 
-@nospecialize
 function test(m::Module)
     @testset verbose = true "$(nameof(m))" begin
         for method in methods(m.__runtest__)
@@ -19,7 +18,6 @@ function test(m::Module)
 end
 export test
 
-@nospecialize
 function test(m::Module, n::Module)
     test(n)
 end
